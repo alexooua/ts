@@ -1,5 +1,3 @@
-import {isBoolean} from "util";
-
 let age: number = 10
 let First: string = "bob"
 let isMy: boolean = true
@@ -58,22 +56,58 @@ interface ICar{
  year:number
 
 }
-interface ICar{
+
+interface ICar {
  on: Boolean
+
  turnOn(): void
- rename:(model: string)=> void
+
+ rename: (model: string) => null | number
 }
 
- let car: ICar = {
+let car: ICar = {
  model: 'Reno Stepway',
  year: 2016,
  on: false,
  turnOn() {
   this.on = true;
  },
- rename(model ) {
-  this.model = model;
+ rename(model) {
+  this.model = model
+  return 2
  }
 }
+
+// Создайте interface IGarage и типизируйте этот кусок кода:
+//    (используя те интерфейсы, которые у вас есть)
+interface IGarage {
+ createGarage(): Array<ICar>
+
+ addCar(): void
+
+ (car: ICar): void
+
+ logAllCarsNames(): void
+
+ getAllCars(): Array<ICar>
+}
+
+let createGarage = () => {
+ let _cars: Array<ICar> = [];
+
+ return {
+  addCar(car: ICar) {
+   _cars.push(car);
+  },
+  logAllCarsNames() {
+   console.log('Cars in the garage: ');
+   _cars.forEach(c => console.log(c.model));
+  },
+  getAllCars() {
+   return _cars;
+  }
+ }
+}
+
 
 export default 1
