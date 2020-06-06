@@ -81,22 +81,20 @@ let car: ICar = {
 // Создайте interface IGarage и типизируйте этот кусок кода:
 //    (используя те интерфейсы, которые у вас есть)
 interface IGarage {
- createGarage(): Array<ICar>
 
- addCar(): void
 
- (car: ICar): void
+ addCar(car: ICar): void
 
  logAllCarsNames(): void
 
  getAllCars(): Array<ICar>
 }
 
-let createGarage = () => {
+let createGarage = (): IGarage => {
  let _cars: Array<ICar> = [];
 
  return {
-  addCar(car: ICar) {
+  addCar(car) {
    _cars.push(car);
   },
   logAllCarsNames() {
