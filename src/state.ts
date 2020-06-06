@@ -4,7 +4,10 @@
  //моджно типизировать масив 2 способами
  let ages:Array<number|string> = ['sdfas',18, 12, 19, 22, 45]
  let ages2:number[] = [18, 12, 19, 22, 45]
-sasa
+
+
+
+
  interface IMan{
  name:string
   height:number
